@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>打点测试</title>
+</head>
+<body>
+<script src="dist/bundle.js" ></script>
+
+<p>ok</p>
+
+<a href="#1">hash 1</a>
+<a href="#2">hash 2</a>
+<a href="#3">hash 3</a>
+<a href="?a=1">1</a>
+<a href="?a=2">2</a>
+<button id="btn">click</button>
+</body>
+
+<script>
+	document.getElementById('btn').addEventListener('click', () => {
+		window.__TRACKER__.onEvent({
+			event_type: 'click',
+			args: {
+				button: 'a'
+			}
+		})
+	})
+</script>
+</html>
+
