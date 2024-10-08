@@ -37,8 +37,8 @@ window.__TRACKER__ = {
 
   function onPageEnterAndLeave() {
     if (window.__TRACKER__) {
-      // window.__TRACKER__.onPageLeave();  // 页面离开
-      // window.__TRACKER__.onPageEnter();  // 页面进入
+      window.__TRACKER__.onPageLeave();  // 页面离开
+      window.__TRACKER__.onPageEnter();  // 页面进入
     }
   }
 
