@@ -1,31 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<title>打点测试</title>
 </head>
+
 <body>
-<script src="dist/bundle.js" ></script>
+	<script src="dist/bundle.js"></script>
 
-<p>ok</p>
+	<p>ok</p>
 
-<a href="#1">hash 1</a>
-<a href="#2">hash 2</a>
-<a href="#3">hash 3</a>
-<a href="?a=1">1</a>
-<a href="?a=2">2</a>
-<button id="btn">click</button>
+	<a href="#" data-route="router-one">router-one</a>
+	<a href="#" data-route="router-two">router-two</a>
+	<a href="#" data-route="router-three">router-three</a>
+	<a href="?a=1">1</a>
+	<a href="?a=2">2</a>
+	<button id="btn">click</button>
 </body>
 
 <script>
+	// pushState router change
+	document.querySelectorAll('a[data-route]').forEach(link => {
+		link.addEventListener('click', (event) => {
+			event.preventDefault();
+			const route = link.getAttribute('data-route');
+			history.pushState(null, '', `/${route}`);
+		});
+	});
+
+	// click event
 	document.getElementById('btn').addEventListener('click', () => {
 		window.__TRACKER__.onEvent({
+			event_id: 'dtl_cart_clk',
 			event_type: 'click',
-			args: {
+			event_name: 'button_click',
+			params: {
+				opn_type: 'do',
 				button: 'a'
 			}
 		})
 	})
 </script>
-</html>
 
+</html>
