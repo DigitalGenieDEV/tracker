@@ -76,4 +76,32 @@ const MyComponent = () => {
 export default MyComponent;
 ``````
 
+
+## How to Run the Demo
+
+### Install Dependencies in the Root Directory
+`````
+npm install
+`````
+
+### Build the project
+`````
+npm run build
+`````
+
+### Install http-server
+````
+npm i -g http-server
+````
+
+### Execute in the Root Directory
+````
+http-server
+````
+
+### Open in Browser
+http://127.0.0.1:8080/demo.html
+
+
+
 [Shopizer-B2B Data Tracking](https://www.yuque.com/harry-vctjd/qfozpk/fctlmsg2q2s1hak9)
